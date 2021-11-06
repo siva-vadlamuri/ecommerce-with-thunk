@@ -16,13 +16,15 @@ export const addToCart = (product)=>{
         payload : product,
     }
 }
-
+export const fetchProductsWithOutThunk = async()=>{
+       const response = await  FakestoreApi.get('/products');
+       return {
+           type : ACTIONS.FETCH_PRODUCTS,
+           payload : response,
+       }
+}
 export const fetchProducts = ()=>{
-    //    const response = await  fakestoreapi.get('/products');
-    //    return {
-    //        type : ACTIONS.FETCH_PRODUCTS,
-    //        payload : response,
-    //    }
+    
 
 
     return async (dispatch)=>{

@@ -2,7 +2,7 @@ import FakestoreApi from "../../_apis/FakestoreApi";
 import {useState,useEffect} from 'react';
 import { Link } from "react-router-dom";
 import './Products.css'
-import { fetchProducts, setProductsData } from "../../redux/ProductActions/ProductActions";
+import { fetchProducts, fetchProductsWithOutThunk, setProductsData } from "../../redux/ProductActions/ProductActions";
 import { useDispatch,useSelector } from "react-redux";
 
 function Products() {
@@ -18,12 +18,14 @@ function Products() {
         
     // }
     useEffect(() => {
-        // console.log(fetchProducts());
+        // Without thunk fetchProductsWithoutThunk
+        // dispatch(fetchProductsWithOutThunk());
+
+        // With Thunk fetchProducts
+
         dispatch(fetchProducts()); 
         
-        // getTheProductsFromServer();
-        
-        // setProductsData(products);
+      
       }, []);
     return (
         <div>
